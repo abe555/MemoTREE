@@ -1,24 +1,30 @@
-# README
+# MemoTREE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+作成したメモ・単語カードを一画面に羅列するサイト。広域表示スタイルの単語帳サイト。
 
-Things you may want to cover:
+### サイトテーマ
+思いついた時にサクッと書いてパッとまとまるメモツール！
+タグ付けや色付けなどで気軽に「 分類分けられて 」「 登録順を気にせず 」まとめやすい！
 
-* Ruby version
+### テーマを選んだ理由
+こんなツールが欲しいという私の願いと、それを今持っている技術でUX/UIを考慮したアプリケーションを制作したかった為。
 
-* System dependencies
+### ターゲットユーザ
+新しいことを勉強している学生や社会人へ。
 
-* Configuration
+### 主な利用シーン
+勉強中、仕事中、その他ゲーム中など、単語やちょっとしたメモを書き残したい時に。
+そしてそれを後から見直して気軽に整理したい時に。
 
-* Database creation
+## 設計書
 
-* Database initialization
+### 機能一覧
+<https://docs.google.com/spreadsheets/d/1el_tXdrzfFpkkz-j6Nr6T3KWS3ZzD9IVBIJJ2YYizcQ/edit?usp=sharing>
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- 仮想環境：Vagrant,VirtualBox
