@@ -1,0 +1,2 @@
+class MemoTagsController < ApplicationController
+end
