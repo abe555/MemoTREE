@@ -1,0 +1,68 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.top {
+	width: 80%;
+	display: flex;
+	margin: 45px auto;
+	justify-content: center;
+	align-items: center;
+}
+.top__text {
+	width: 40%;
+	padding: 20px;
+	text-align: center;
+	background-color: #f2f2f2;
+}
+.top__enter {
+	width: 40%;
+	text-align: center;
+}
+.enter-btn__field {
+	margin: 45px;
+	text-align: center;
+}
+
+.home_container1 {
+	width: 360px;
+  	padding: 20px 0 0;
+  	margin: auto;
+}
+
+.enter {
+	position: relative;
+	max-width: 360px;
+  	margin: 0 auto 100px;
+  	padding: 30px;
+  	text-align: center;
+  	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.enter__ttl {
+	font-family: "Roboto", sans-serif;
+	margin: 20px 0;
+	font-size: 24px;
+}
+.enterform {
+	font-family: "Roboto", sans-serif;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	font-size: 14px;
+	outline: none;
+
+}
+.enterform__field {
+	background-color: #f2f2f2;
+	width: 100%;
+	padding: 7px;
+}
+
+.enterform__btn {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+}
+

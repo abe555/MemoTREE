@@ -1,0 +1,35 @@
+<div class="home_container1">
+
+  <div class="enter">
+
+    <p class="enter__ttl">新規登録</p>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="enter__field">
+        <div class="enterform">
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "お名前", class: 'enterform__field' %>
+        </div>
+
+        <div class="enterform">
+          <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: 'enterform__field' %>
+        </div>
+
+        <div class="enterform">
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: 'enterform__field' %>
+        </div>
+
+        <div class="enterform">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: 'enterform__field' %>
+        </div>
+
+        <div class="enter__field">
+          <%= f.submit "新規登録", class: "btn btn-success enterform__btn" %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
