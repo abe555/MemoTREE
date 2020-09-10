@@ -4,8 +4,8 @@
 	<div class="btn1">
 
 		<li> ようこそ<%= current_user.name %>さん</li>
-		<li class="btn1__list">
-			<%= link_to 'マイメニュー', class: "btn btn-default" %>
+		<li class="btn1__dropdown btn-group">
+			<%= link_to 'マイメニュー', class: "btn btn-default dropdown-toggle" %>
 			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 				<span class="caret"></span>
 			</button>

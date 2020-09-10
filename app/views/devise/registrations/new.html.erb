@@ -1,36 +1,35 @@
-<div class="container enter">
-  <h2>新規登録</h2>
+<div class="home_container1">
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="enter">
 
-    <div class="field">
-      <%= f.label :お名前 %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-    </div>
+    <p class="enter__ttl">新規登録</p>
 
-    <div class="field">
-      <%= f.label :メールアドレス %><br />
-      <%= f.email_field :email, autocomplete: "email" %>
-    </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.label :パスワード %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> 文字以上)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
+      <div class="enter__field">
+        <div class="enterform">
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "お名前", class: 'enterform__field' %>
+        </div>
 
-    <div class="field">
-      <%= f.label :パスワード確認 %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+        <div class="enterform">
+          <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: 'enterform__field' %>
+        </div>
 
-    <div class="field">
-      <%= f.submit "新規登録" %>
-    </div>
-  <% end %>
+        <div class="enterform">
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: 'enterform__field' %>
+        </div>
 
-  <%= render "devise/shared/links" %>
+        <div class="enterform">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: 'enterform__field' %>
+        </div>
+
+        <div class="enter__field">
+          <%= f.submit "新規登録", class: "btn btn-success enterform__btn" %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
