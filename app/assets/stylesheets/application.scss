@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.enter {
+	width: 50vh;
+	justify-content: center;
+}
+.field__form {
+	justify-content: center;
+}

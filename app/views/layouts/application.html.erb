@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= render "layouts/header2" %>
+    <% else %>
+      <%= render "layouts/header1" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

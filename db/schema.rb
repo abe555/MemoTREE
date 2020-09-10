@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_084918) do
+ActiveRecord::Schema.define(version: 2020_09_10_052904) do
 
   create_table "inquiries", force: :cascade do |t|
     t.string "name", null: false
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 2020_09_09_084918) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sns_credentials", force: :cascade do |t|
+    t.string "uid"
+    t.string "provider"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "tag", null: false
     t.datetime "created_at", null: false
@@ -48,8 +56,6 @@ ActiveRecord::Schema.define(version: 2020_09_09_084918) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name", null: false
-    t.string "uid", null: false
-    t.string "provider", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
