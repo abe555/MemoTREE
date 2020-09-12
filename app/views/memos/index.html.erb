@@ -1,0 +1,41 @@
+<div class="main1">
+
+	<div class="search">
+		<div class="btn btn-default">検索窓</div>
+	</div>
+		<div class="memo-btn">
+			<div class="glyphicon glyphicon-pencil memo-btn__gly" aria-hidden="true"></div>
+		</div>
+	<div class="new-memo">
+		<div class="new-memo__form">
+			<%= form_with(model: @memo, local: true, url:memos_path) do |form| %>
+				<p>新しいメモ</p>
+				<%= form.text_area :body, placeholder:"内容" %></br>
+				<p>メモの色</p>
+				<label><%= form.radio_button :color, :green, checked: true %>green</label>
+				<label><%= form.radio_button :color, :red %>red</label>
+				<label><%= form.radio_button :color, :blue %>blue</label>
+				<label><%= form.radio_button :color, :yellow %>yellow</label>
+				<label><%= form.radio_button :color, :orange %>orange</label></br>
+				<%= form.submit 'メモ作成', class: "btn btn-success" %>
+			<% end %>
+		</div>
+	</div>
+	<div class="memos">
+		<% @memos.each do |memo| %>
+			<div class="memos__item">
+				<%= link_to '削除', memo_path(memo), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+				<%= memo.body %>
+				<%= memo.color %>
+			</div>
+		<% end %>
+		<div class="memos__item">a</div>
+		<div class="memos__item">b</div>
+		<div class="memos__item">c</div>
+		<div class="memos__item">c</div>
+		<div class="memos__item">c</div>
+		<div class="memos__item">c</div>
+		<div class="memos__item">c</div>
+	</div>
+
+</div>
