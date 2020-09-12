@@ -18,7 +18,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-	$('.memo-btn').on('click', function(){
+	$('.memo-btn__circle').on('click', function(){
     $('.new-memo').fadeToggle();
   });
 });

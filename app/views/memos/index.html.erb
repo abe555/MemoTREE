@@ -3,14 +3,17 @@
 	<div class="search">
 		<div class="btn btn-default">検索窓</div>
 	</div>
-		<div class="memo-btn">
-			<div class="glyphicon glyphicon-pencil memo-btn__gly" aria-hidden="true"></div>
+	<div class="memo-btn">
+		<div class="memo-btn__circle" data-toggle="modal" data-target="#sampleModal">
+			<a class="glyphicon glyphicon-pencil memo-btn__icon"></a>
 		</div>
-	<div class="new-memo">
-		<div class="new-memo__form">
-			<%= form_with(model: @memo, local: true, url:memos_path) do |form| %>
+	</div>
+	<div class="new-memo modal fade" id="sampleModal">
+		<div class="new-memo__form modal-dialog">
+			<div class="modal-content">
+			<%= form_with(model: @memo, local: true, url:memos_path, method: :post) do |form| %>
 				<p>新しいメモ</p>
-				<%= form.text_area :body, placeholder:"内容" %></br>
+				<%= form.text_area :body, cols: "75", rows: "7" %></br>
 				<p>メモの色</p>
 				<label><%= form.radio_button :color, :green, checked: true %>green</label>
 				<label><%= form.radio_button :color, :red %>red</label>
@@ -19,23 +22,22 @@
 				<label><%= form.radio_button :color, :orange %>orange</label></br>
 				<%= form.submit 'メモ作成', class: "btn btn-success" %>
 			<% end %>
+			</div>
 		</div>
 	</div>
-	<div class="memos">
+	<div class="memo-index">
 		<% @memos.each do |memo| %>
-			<div class="memos__item">
-				<%= link_to '削除', memo_path(memo), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-				<%= memo.body %>
-				<%= memo.color %>
+			<div class="memos">
+				<div class="memos__destroy">
+					<%= link_to memo_path(memo), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+						<span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: white;" ></span>
+					<% end %>
+				</div>
+				<div class="memos__content">
+					<%= memo.body %>
+				</div>
 			</div>
 		<% end %>
-		<div class="memos__item">a</div>
-		<div class="memos__item">b</div>
-		<div class="memos__item">c</div>
-		<div class="memos__item">c</div>
-		<div class="memos__item">c</div>
-		<div class="memos__item">c</div>
-		<div class="memos__item">c</div>
 	</div>
 
 </div>

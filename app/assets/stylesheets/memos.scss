@@ -10,34 +10,67 @@
 .search {
 
 }
+
+// [ memo作成ボタン ]
 .memo-btn{
 	display: flex;
 	justify-content: flex-end;
+	margin-right: 50px;
+}
+.memo-btn__icon {
+	font-size: 36px;
+	text-align:center;
+	padding: 18px;
 	width: 75px;
 	height: 75px;
 	border-radius: 50%;
-	background-color: #f2f2f2;
+	border: solid #f2f2f2;
 }
+
+// [ memo作成フォーム ]
 .new-memo {
-	background-color: #f2f2f2;
-	width: 200px;
+	position: fixed;
+	width: 100%;
+	height: 100%;
 	display: none;
+	margin: 0 auto;
 }
-new-memo__form {
+.new-memo__form {
+	margin: 0 auto;
 }
-.memos {
+.modal-content {
+	padding: 15px;
+	height: 300px;
+}
+.model-content__form {
+	width: 100%;
+	height: 100px;
+}
+
+// [ memo一覧 ]
+.memo-index {
 	margin-top: 50px;
 	background-color: #f2f2f2;
 	height: 500px;
 	display: flex;
-	justify-content: space-around;
 	flex-wrap: wrap;
+	flex-direction: row;
 }
-.memos__item {
+.memos {
 	height: 200px;
 	width: 200px;
-	background-color: #fff;
+	background-color: #24b362;
 	margin: 20px;
-	text-align: center;
+	padding: 10px;
 }
-
+.memos__destroy {
+	float: right;
+	font-size: 24px;
+}
+.memos__content {
+	margin-top: 30px;
+	width: 100%;
+	height: 150px;
+	background-color: #fff;
+	padding: 10px;
+}
