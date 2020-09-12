@@ -14,7 +14,11 @@
 //= require jquery.turbolinks
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
-//= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function(){
+	$('.memo-btn__circle').on('click', function(){
+    $('.new-memo').fadeToggle();
+  });
+});

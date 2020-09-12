@@ -1,3 +1,76 @@
 // Place all the styles related to the memos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.main1 {
+	width: 80%;
+	margin: 0 auto;
+}
+.search {
+
+}
+
+// [ memo作成ボタン ]
+.memo-btn{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 50px;
+}
+.memo-btn__icon {
+	font-size: 36px;
+	text-align:center;
+	padding: 18px;
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	border: solid #f2f2f2;
+}
+
+// [ memo作成フォーム ]
+.new-memo {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: none;
+	margin: 0 auto;
+}
+.new-memo__form {
+	margin: 0 auto;
+}
+.modal-content {
+	padding: 15px;
+	height: 300px;
+}
+.model-content__form {
+	width: 100%;
+	height: 100px;
+}
+
+// [ memo一覧 ]
+.memo-index {
+	margin-top: 50px;
+	background-color: #f2f2f2;
+	height: 500px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.memos {
+	height: 200px;
+	width: 200px;
+	background-color: #24b362;
+	margin: 20px;
+	padding: 10px;
+}
+.memos__destroy {
+	float: right;
+	font-size: 24px;
+}
+.memos__content {
+	margin-top: 30px;
+	width: 100%;
+	height: 150px;
+	background-color: #fff;
+	padding: 10px;
+}

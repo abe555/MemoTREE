@@ -22,8 +22,6 @@
 	height: 20vh;
 	background: green;
 	display: flex;
-	align-items: center; //上下の中央揃え
-	justify-content: flex-end; //→右に寄せる
 	font-size: 36px;
 }
 .header1_lg {
@@ -32,8 +30,10 @@
 
 .btn1 {
 	display: flex;
+	justify-content: flex-end;
+	align-items: center; //上下の中央揃え
 	list-style: none;
 }
-.btn1__list {
+.btn1__list, btn1__dropdown {
 	margin: 10px;
 }

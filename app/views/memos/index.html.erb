@@ -1,0 +1,43 @@
+<div class="main1">
+
+	<div class="search">
+		<div class="btn btn-default">検索窓</div>
+	</div>
+	<div class="memo-btn">
+		<div class="memo-btn__circle" data-toggle="modal" data-target="#sampleModal">
+			<a class="glyphicon glyphicon-pencil memo-btn__icon"></a>
+		</div>
+	</div>
+	<div class="new-memo modal fade" id="sampleModal">
+		<div class="new-memo__form modal-dialog">
+			<div class="modal-content">
+			<%= form_with(model: @memo, local: true, url:memos_path, method: :post) do |form| %>
+				<p>新しいメモ</p>
+				<%= form.text_area :body, cols: "75", rows: "7" %></br>
+				<p>メモの色</p>
+				<label><%= form.radio_button :color, :green, checked: true %>green</label>
+				<label><%= form.radio_button :color, :red %>red</label>
+				<label><%= form.radio_button :color, :blue %>blue</label>
+				<label><%= form.radio_button :color, :yellow %>yellow</label>
+				<label><%= form.radio_button :color, :orange %>orange</label></br>
+				<%= form.submit 'メモ作成', class: "btn btn-success" %>
+			<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="memo-index">
+		<% @memos.each do |memo| %>
+			<div class="memos">
+				<div class="memos__destroy">
+					<%= link_to memo_path(memo), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+						<span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: white;" ></span>
+					<% end %>
+				</div>
+				<div class="memos__content">
+					<%= memo.body %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+</div>
