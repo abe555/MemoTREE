@@ -1,22 +1,17 @@
 <div class="header1">
 	<div class="header1__lg">
+		<!--<li class="">ようこそ<%= current_user.name %>さん</li>-->
 	</div>
 	<div class="btn1">
+			<li class="dropdown btn1__list">
+				<a href='#' class="btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">マイメニュー  <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li role="presentation"><a href="#">マイページ</a></li>
+					<li role="presentation"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
 
-		<li class="">ようこそ<%= current_user.name %>さん</li>
-		<li class="dropdown btn1__dropdown">
-			<a href='#' class="btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">マイメニュー  <span class="caret"></span></a>
-			<ul class="dropdown-menu" role="menu">
-				<li role="presentation"><a href="#">マイページ</a></li>
-				<li role="presentation"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-
-			</ul>
-		</li>
-		<li class="btn1__list">
-			<%= link_to 'Word', words_path, class: "btn btn-default" %>
-		</li>
-		<li class="btn1__list">
-			<%= link_to 'Memo', memos_path, class: "btn btn-default" %>
-		</li>
+				</ul>
+			</li>
+			<li class="btn1__list"><%= link_to 'Word', words_path, class: "btn btn-default" %></li>
+			<li class="btn1__list"><%= link_to 'Memo', memos_path, class: "btn btn-default" %></li>
 	</div>
 </div>
