@@ -6,7 +6,7 @@ class Memo < ApplicationRecord
   validates :user_id, presence: true
   validates :body, presence: true
 
-  enum status: {
+  enum color: {
   	green: 0,
   	red: 1,
   	blue: 2,

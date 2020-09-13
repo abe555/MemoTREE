@@ -34,6 +34,8 @@ class MemosController < ApplicationController
 		render 'index'
 	end
 
+	def search
+	end
 
 	private
 	def memo_params

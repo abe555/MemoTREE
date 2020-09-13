@@ -29,6 +29,9 @@ class WordsController < ApplicationController
 	def destroy
 	end
 
+	def search
+	end
+
 	private
 	def word_params
 		params.permit(:name, :body, :color, :pickup)

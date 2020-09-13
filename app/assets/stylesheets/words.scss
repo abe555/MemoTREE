@@ -6,15 +6,12 @@
 	width: 80%;
 	margin: 0 auto;
 }
-.search {
 
-}
-
-// [ wordcard作成ボタン ]
+// [ word作成ボタン ]
 .new-btn{
 	display: flex;
 	justify-content: flex-end;
-	margin-right: 50px;
+	margin: 20px 50px;
 }
 .new-btn__icon {
 	font-size: 36px;
@@ -46,9 +43,9 @@
 	height: 100px;
 }
 
-// [ wordcard一覧 ]
+// [ word一覧詳細 ]
 .leaves {
-	margin: 50px auto 0;
+	margin: 0 auto;
 	background-color: #f2f2f2;
 	height: 500px;
 	display: flex;
