@@ -1,3 +1,81 @@
 // Place all the styles related to the words controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main1 {
+	width: 80%;
+	margin: 0 auto;
+}
+.search {
+
+}
+
+// [ wordcard作成ボタン ]
+.new-btn{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 50px;
+}
+.new-btn__icon {
+	font-size: 36px;
+	text-align:center;
+	padding: 18px;
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	border: solid #f2f2f2;
+}
+
+// [ wordcard作成フォーム ]
+.new-leaf {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: none;
+	margin: 0 auto;
+}
+.new-leaf__form {
+	margin: 0 auto;
+}
+.modal-content {
+	padding: 15px;
+	height: 300px;
+}
+.model-content__form {
+	width: 100%;
+	height: 100px;
+}
+
+// [ wordcard一覧 ]
+.leaves {
+	margin: 50px auto 0;
+	background-color: #f2f2f2;
+	height: 500px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.words {
+	height: 200px;
+	width: 250px;
+	background-color: #24b362;
+	margin: 20px;
+	padding: 10px;
+}
+
+.words__destroy {
+	float: right;
+	font-size: 24px;
+}
+.words__content {
+	margin-top: 30px;
+	width: 100%;
+	height: 150px;
+	background-color: #fff;
+	padding: 10px;
+}
+.word-text__ttl {
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
