@@ -1,27 +1,28 @@
 <div class="main1">
 	<div class="page-ttl">
-		<h2>memos</h2>
+		<h2>words</h2>
 	</div>
-	<!--memo投稿ボタン-->
+	<!--word投稿ボタン-->
 	<div class="new-btn">
 		<div class="new-btn__circle" data-toggle="modal" data-target="#sampleModal">
 			<a class="glyphicon glyphicon-pencil new-btn__icon"></a>
 		</div>
 	</div>
-	<!--memo投稿フォーム-->
+	<!--word投稿フォーム-->
 	<div class="new-leaf modal fade" id="sampleModal">
 		<div class="new-leaf__form modal-dialog">
 			<div class="modal-content">
-			<%= form_with(model: @memo, local: true, url:memos_path, method: :post) do |form| %>
-				<p>新しいメモ</p>
-				<%= form.text_area :body, cols: "75", rows: "7" %></br>
-				<p>メモの色</p>
+			<%= form_with(model: @word, local: true, url:words_path, method: :post) do |form| %>
+				<p>新しい単語カード</p>
+				<%= form.text_field :name, cols: "75", rows: "1" %></br>
+				<%= form.text_area :body, cols: "75", rows: "4" %></br>
+				<p>単語カードの色</p>
 				<label><%= form.radio_button :color, :green, checked: true %>green</label>
 				<label><%= form.radio_button :color, :red %>red</label>
 				<label><%= form.radio_button :color, :blue %>blue</label>
 				<label><%= form.radio_button :color, :yellow %>yellow</label>
 				<label><%= form.radio_button :color, :orange %>orange</label></br>
-				<%= form.submit 'メモ作成', class: "btn btn-success" %>
+				<%= form.submit '単語カード作成', class: "btn btn-success" %>
 			<% end %>
 			</div>
 		</div>
@@ -40,17 +41,24 @@
 			<% end %>
 		</div>
 	</div>
-	<!--memo一覧-->
+	<!--word一覧-->
 	<div class="leaves">
-		<% @memos.each do |memo| %>
-			<div class="memos">
-				<div class="memos__destroy">
-					<%= link_to memo_path(memo), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+		<% @words.each do |word| %>
+			<div class="words">
+				<div class="words__destroy">
+					<%= link_to word_path(word), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
 						<span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: white;" ></span>
 					<% end %>
 				</div>
-				<div class="memos__content">
-					<%= memo.body %>
+				<div class="words__content">
+					<div class="word-text">
+						<div class="word-text__ttl">
+							<%= word.name %>
+						</div>
+						<div class="word-text__body">
+							<%= word.body %>
+						</div>
+					</div>
 				</div>
 			</div>
 		<% end %>

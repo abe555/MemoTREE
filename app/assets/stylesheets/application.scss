@@ -16,7 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+// [ header関係 ]
 .header1 {
 	width: 100%;
 	height: 20vh;
@@ -26,7 +26,6 @@
 .header1_lg {
 	margin-right: auto;
 }
-
 .btn1 {
 	height: 100%;
 	width: 50%;
@@ -38,5 +37,25 @@
 	list-style: none;
 }
 .btn1__list{
+	margin: 10px;
+}
+// [ ページタイトル ]
+.page-ttl {
+	margin-left: 20px;
+	float: left;
+}
+.page-ttl > h2 {
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #094;
+  -webkit-box-shadow: 5px 5px 0 #007032;
+  box-shadow: 5px 5px 0 #007032;
+}
+
+// [ 検索・並べ替え窓 ]
+.discovery {
+	margin: 20px;
+}
+.discovery__sort {
 	margin: 10px;
 }
