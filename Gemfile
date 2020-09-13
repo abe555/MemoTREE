@@ -72,3 +72,9 @@ gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'enum_help'
+
+# デプロイ
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
