@@ -23,8 +23,9 @@
 	background: green;
 	font-size: 36px;
 }
-.header1_lg {
-	margin-right: auto;
+.header1__lg {
+	margin: 5vh 20px;
+	float: left;
 }
 .btn1 {
 	height: 100%;
@@ -39,6 +40,13 @@
 .btn1__list{
 	margin: 10px;
 }
+
+// [ ページのmain ]
+.main1 {
+	width: 80%;
+	margin: 0 auto;
+}
+
 // [ ページタイトル ]
 .page-ttl {
 	margin-left: 20px;
