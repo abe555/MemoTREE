@@ -1,0 +1,31 @@
+<div class="main1">
+	<!--タイトル-->
+	<div class="page-ttl">
+		<h2>マイページ</h2>
+	</div>
+	<div class="mypage col-md-8">
+		<!--編集ボタン-->
+		<div class="new-btn">
+			<%= link_to '登録情報編集', edit_mypage_path, class: "btn btn-success" %>
+		</div>
+		<!--会員情報-->
+		<table class="table">
+			<tr>
+				<td>登録名</td>
+				<td><%= @user.name %></td>
+			</tr>
+			<tr>
+				<td>登録したメールアドレス</td>
+				<td><%= @user.email %></td>
+			</tr>
+			<tr>
+				<td>これまで登録した単語数</td>
+				<td><%= @user.words.count %></td>
+			</tr>
+			<tr>
+				<td>これまで登録したメモ数</td>
+				<td><%= @user.memos.count %></td>
+			</tr>
+		</table>
+	</div>
+</div>

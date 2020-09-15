@@ -6,7 +6,7 @@
 			<li class="dropdown btn1__list">
 				<a href='#' class="btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">マイメニュー  <span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
-					<li role="presentation"><a href="#">マイページ</a></li>
+					<li role="presentation"><%= link_to 'マイページ', mypage_path(current_user) %></li>
 					<li role="presentation"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
 
 				</ul>
