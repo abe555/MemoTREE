@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   get 'mypage/edit' => 'users#edit', as:'edit_mypage'
   patch 'mypage' => 'users#update', as: 'update_mypage'
 
-  get "search" => 'words#search'
+  get "search" => 'search#search'
 end

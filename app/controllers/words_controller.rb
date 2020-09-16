@@ -27,9 +27,7 @@ class WordsController < ApplicationController
 	end
 
 	def destroy
-	end
-
-	def search
+		@word = Word.find(params[:id])
 	end
 
 	private
