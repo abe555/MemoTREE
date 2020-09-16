@@ -6,13 +6,13 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
-    @user = User.find_by(id: :user_id)
+    # @user = User.find_by(id: :user_id)
   end
 
   def update
-    @user = current_user
-    @user = User.find_by(id: :user_id)
-    if @user.update(user_params)
+    user = current_user
+    # user = User.find_by(id: :user_id)
+    if user.update(user_params)
       redirect_to mypage_path, notice: "successfully updated user!"
     else
       render "edit"
@@ -21,6 +21,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-  	params[:user].permit(:name, :email)
+  	params.require(:user).permit(:name, :email)
   end
 end
