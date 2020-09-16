@@ -1,0 +1,19 @@
+<div class="main1">
+	<div class="edit-leaf">
+		<div class="edit-leaf__form">
+
+			<%= form_with(model: @memo, local: true, url:memo_path, method: :patch) do |form| %>
+				<p>メモ編集</p>
+				<%= form.text_area :body, cols: "60", rows: "7" %></br>
+				<p>メモの色</p>
+				<label><%= form.radio_button :color, :green, checked: true %>green</label>
+				<label><%= form.radio_button :color, :red %>red</label>
+				<label><%= form.radio_button :color, :blue %>blue</label>
+				<label><%= form.radio_button :color, :yellow %>yellow</label>
+				<label><%= form.radio_button :color, :orange %>orange</label></br>
+				<%= form.submit '編集を保存', class: "btn btn-success" %>
+			<% end %>
+
+		</div>
+	</div>
+</div>

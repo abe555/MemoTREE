@@ -8,6 +8,7 @@
 	justify-content: flex-end;
 	margin: 20px 50px;
 }
+
 .new-btn__icon {
 	font-size: 36px;
 	text-align:center;
@@ -55,6 +56,11 @@
 	padding: 10px;
 }
 
+.words__edit {
+	float: left;
+	font-size: 22px;
+	margin-left: 5px;
+}
 .words__destroy {
 	float: right;
 	font-size: 24px;
@@ -70,4 +76,19 @@
 	text-align: center;
 	margin-bottom: 10px;
 	font-size: 18px;
+}
+// [ editページ ]
+
+.edit-leaf {
+	margin: 0 auto;
+	padding: 15px;
+	width: 500px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.edit-leaf__form {
+	margin: 0 auto;
+}
+.edit-leaf__back {
+	margin-top: 25px;
 }
