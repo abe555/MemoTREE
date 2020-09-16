@@ -46,6 +46,11 @@
 	<div class="leaves">
 		<% @memos.each do |memo| %>
 			<div class="memos">
+				<div class="memos__edit">
+					<%= link_to edit_memo_path(memo) do %>
+						<span class="glyphicon glyphicon-edit" aria-hidden="true" style="color: white;"></span>
+					<% end %>
+				</div>
 				<div class="memos__destroy">
 					<%= link_to memo_path(memo), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
 						<span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: white;" ></span>

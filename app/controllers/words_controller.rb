@@ -10,7 +10,7 @@ class WordsController < ApplicationController
 		@word.user_id = current_user.id
 		@word.save
 		@words = Word.all
-		render 'index'
+		redirect_to words_path
 	end
 
 	def show
@@ -21,18 +21,30 @@ class WordsController < ApplicationController
 	end
 
 	def edit
+		@word = Word.find(params[:id])
 	end
 
 	def update
+		word = Word.find(params[:id])
+		if word.update(word_params)
+			flash[:notice] = "successfully updated word!"
+			redirect_to words_path
+		else
+			render 'index'
+		end
 	end
 
 	def destroy
-		@word = Word.find(params[:id])
+		word = Word.find(params[:id])
+		word.destroy
+		@words = Word.all
+		word = Word.new
+		render 'index'
 	end
 
 	private
 	def word_params
-		params.permit(:name, :body, :color, :pickup)
+		params.require(:word).permit(:name, :body, :color, :pickup)
 	end
 
 end

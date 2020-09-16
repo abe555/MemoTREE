@@ -21,9 +21,17 @@ class MemosController < ApplicationController
 	end
 
 	def edit
+		@memo = Memo.find(params[:id])
 	end
 
 	def update
+		memo = Memo.find(params[:id])
+		if memo.update(memo_params)
+			flash[:notice] = "successfully updated memo!"
+			redirect_to memos_path
+		else
+			render 'index'
+		end
 	end
 
 	def destroy
@@ -36,7 +44,7 @@ class MemosController < ApplicationController
 
 	private
 	def memo_params
-		params.permit(:body, :color, :pickup)
+		params.require(:memo).permit(:body, :color, :pickup)
 	end
 
 end

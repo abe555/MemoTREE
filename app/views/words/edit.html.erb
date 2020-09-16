@@ -1,0 +1,22 @@
+<div class="main1">
+	<div class="edit-leaf">
+		<div class="edit-leaf__form">
+
+			<%= form_with(model: @word, url: word_path, method: :patch, local: true) do |form| %>
+				<h2>カード編集</h2>
+				<%= form.text_area :name, cols: "50", rows: "1" %></br></br>
+				<%= form.text_area :body, cols: "60", rows: "4" %></br>
+				<p>単語カードの色</p>
+				<label><%= form.radio_button :color, :green, checked: true %>green</label>
+				<label><%= form.radio_button :color, :red %>red</label>
+				<label><%= form.radio_button :color, :blue %>blue</label>
+				<label><%= form.radio_button :color, :yellow %>yellow</label>
+				<label><%= form.radio_button :color, :orange %>orange</label></br>
+				<%= form.submit '変更を保存', class: "btn btn-success" %>
+			<% end %>
+		<div class="edit-leaf__back">
+			<%= link_to '戻る', word_path, class: 'btn btn-primary' %>
+		</div>
+		</div>
+	</div>
+</div>
