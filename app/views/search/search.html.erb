@@ -1,0 +1,68 @@
+<div class="main1">
+	<h2>検索結果</h2>
+
+	<!--検索窓-->
+	<div class="discovery">
+		<div class="discovery__search">
+			<%= form_tag(search_path, method: :get) do %>
+				<%= select_tag(:option, options_for_select([["word","1"],["memo","2"],["tag","3"]])) %>
+				<%= text_field_tag :search %>
+				<%= submit_tag '検索' %>
+			<% end %>
+		</div>
+	</div>
+
+	<!--検索結果表示-->
+	<% if @word_or_memo_or_tag == "1" %>
+		<h2>Word</h2>
+		<div class="leaves">
+			<% @words.each do |word| %>
+				<div class="words">
+					<div class="words__destroy">
+						<%= link_to word_path(word), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+							<span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: white;" ></span>
+						<% end %>
+					</div>
+					<div class="words__content">
+						<div class="word-text">
+							<div class="word-text__ttl">
+								<%= word.name %>
+							</div>
+							<div class="word-text__body">
+								<%= word.body %>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	<% elsif @word_or_memo_or_tag == "2" %>
+		<h2>Memo</h2>
+		<div class="leaves">
+			<% @memos.each do |memo| %>
+				<div class="memos">
+					<div class="memos__destroy">
+						<%= link_to memo_path(memo), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+							<span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: white;" ></span>
+						<% end %>
+					</div>
+					<div class="memos__content">
+						<%= memo.body %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+
+	<% elsif @word_or_memo_or_tag == "3" %>
+		<h2>tag</h2>
+		<%= tag.each do |tag| %>
+			<table>
+				<tr>
+					<%= tag.hashname %>
+				</tr>
+			</table>
+		<% end %>
+
+	<% end %>
+
+</div>

@@ -8,7 +8,6 @@ class Word < ApplicationRecord
   validates :body, presence: true
 
 
-
   enum color: {
   	green: 0,
   	red: 1,
@@ -16,5 +15,13 @@ class Word < ApplicationRecord
   	yellow: 3,
   	orange: 4,
   }
+
+  def self.search(search, word_or_memo_or_tag)
+    if word_or_memo_or_tag == "1"
+      Word.where(['name LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"])
+    else
+      Word.all
+    end
+  end
 
 end

@@ -18,4 +18,12 @@ class TagsController < ApplicationController
 	def destroy
 	end
 
+	def Tag.search(search, word_or_memo_or_tag)
+		if word_or_memo_or_tag == "3"
+			Tag.where(['hashname LIKE ?', "%#{search}%"])
+		else
+			Tag.all
+		end
+	end
+
 end
