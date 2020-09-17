@@ -42,7 +42,7 @@
 
 .enter__ttl {
 	font-family: "Roboto", sans-serif;
-	margin: 20px 0;
+	margin-bottom: 20px;
 	font-size: 24px;
 }
 .enterform {
@@ -63,6 +63,15 @@
 .enterform__btn {
 	width: 100%;
 	padding: 8px;
-	margin-bottom: 10px;
+	margin: 10px 0;
 }
 
+// [ SNS認証のボタン ]
+.enter__SNS {
+	margin-top: 15px;
+	font-size: 20px;
+}
+
+.enter__SNS > i {
+
+}

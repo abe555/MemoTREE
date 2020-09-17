@@ -27,9 +27,23 @@
         <div class="enter__field">
           <%= f.submit "新規登録", class: "btn btn-success enterform__btn" %>
         </div>
+
+        <div class="enter__field">
+          <%= link_to "登録済みの方はこちら", new_user_session_path, class: "btn btn-primary enterform__btn" %>
+        </div>
       </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
+    <div class="enter__SNS">
+      <h4>SNS認証</h4>
+      <%= link_to user_facebook_omniauth_authorize_path do %>
+        <i class="fab fa-facebook"></i>
+      <% end %>
+      <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+        <i class="fab fa-google"></i>
+      <% end %>
+
+    </div>
+
   </div>
 </div>

@@ -23,12 +23,13 @@
 
         <div class="enterform">
           <%= f.submit "ログイン", class: "btn btn-success enterform__btn" %>
+
+          <%= link_to "新規登録はこちら", new_user_registration_path, class: "btn btn-warning enterform__btn" %>
         </div>
       </div>
 
     <% end %>
 
-    <%= render "devise/shared/links" %>
   </div>
 
 </div>
