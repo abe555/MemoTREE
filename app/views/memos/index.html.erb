@@ -12,7 +12,7 @@
 	<div class="new-leaf modal fade" id="sampleModal">
 		<div class="new-leaf__form modal-dialog">
 			<div class="modal-content">
-			<%= form_with(model: @memo, local: true, url:memos_path, method: :post) do |form| %>
+			<%= form_with(model: Memo.new, url:memos_path, method: :post, local: true) do |form| %>
 				<p>新しいメモ</p>
 				<%= form.text_area :body, cols: "75", rows: "7" %></br>
 				<p>メモの色</p>

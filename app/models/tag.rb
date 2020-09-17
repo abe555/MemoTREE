@@ -1,6 +1,7 @@
 class Tag < ApplicationRecord
-	has_many :memo_tags
-	has_many :word_tags
-
 	validates :tag, presence: true, length: {maximum:99}
+
+	has_and_belongs_to_many :memos, through: :memo_tags
+	has_and_belongs_to_many :words
+
 end
