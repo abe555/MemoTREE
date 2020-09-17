@@ -12,7 +12,7 @@
 	<div class="new-leaf modal fade" id="sampleModal">
 		<div class="new-leaf__form modal-dialog">
 			<div class="modal-content">
-			<%= form_with(model: @memo, local: true, url:memos_path, method: :post) do |form| %>
+			<%= form_with(model: Memo.new, url:memos_path, method: :post, local: true) do |form| %>
 				<p>新しいメモ</p>
 				<%= form.text_area :body, cols: "75", rows: "7" %></br>
 				<p>メモの色</p>
@@ -20,7 +20,7 @@
 				<label><%= form.radio_button :color, :red %>red</label>
 				<label><%= form.radio_button :color, :blue %>blue</label>
 				<label><%= form.radio_button :color, :yellow %>yellow</label>
-				<label><%= form.radio_button :color, :orange %>orange</label></br>
+				<label><%= form.radio_button :color, :gray %>gray</label></br>
 				<%= form.submit 'メモ作成', class: "btn btn-success" %>
 			<% end %>
 			</div>
@@ -42,10 +42,24 @@
 			<% end %>
 		</div>
 	</div>
+</div>
+
+<div class="main2">
 	<!--memo一覧-->
 	<div class="leaves">
 		<% @memos.each do |memo| %>
-			<div class="memos">
+			<% if memo.color == "green" %>
+				<div class="memos" style="background-color: #00bb85;">
+			<% elsif memo.color == "red" %>
+				<div class="memos" style="background-color: #f62e36;">
+			<% elsif memo.color == "blue" %>
+				<div class="memos" style="background-color: #0078ba;">
+			<% elsif memo.color == "yellow" %>
+				<div class="memos" style="background-color: #d7c447;">
+			<% elsif memo.color == "gray" %>
+				<div class="memos" style="background-color: #9caeb7;">
+			<% end %>
+
 				<div class="memos__edit">
 					<%= link_to edit_memo_path(memo) do %>
 						<span class="glyphicon glyphicon-edit" aria-hidden="true" style="color: white;"></span>

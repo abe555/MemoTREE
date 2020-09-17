@@ -2,15 +2,15 @@ class MemosController < ApplicationController
 	before_action :authenticate_user!
 
 	def new
-		memo = Memo.new
+		@memo = Memo.new
 	end
 
 	def create
-		@memo = Memo.new(memo_params)
-		@memo.user_id = current_user.id
-		@memo.save
+		memo = Memo.new(memo_params)
+		memo.user_id = current_user.id
+		memo.save
 		@memos = Memo.all
-		render "index"
+		redirect_to memos_path
 	end
 
 	def show
@@ -41,6 +41,14 @@ class MemosController < ApplicationController
 		memo = Memo.new
 		render 'index'
 	end
+
+	def tag
+		@user = current_user
+		@hashtag = Tag.find_by(hashname: params[:name])
+		@memos = @hashtag.memo.build
+		@memo = @hashtag.memo.page(params[:page])
+	end
+
 
 	private
 	def memo_params

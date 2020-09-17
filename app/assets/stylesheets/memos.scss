@@ -31,7 +31,7 @@
 }
 .modal-content {
 	padding: 15px;
-	height: 300px;
+	height: 350px;
 }
 .model-content__form {
 	width: 100%;
@@ -41,7 +41,6 @@
 // [ memo一覧 ]
 .leaves {
 	margin: 0 auto;
-	background-color: #f2f2f2;
 	height: 500px;
 	display: flex;
 	flex-wrap: wrap;
@@ -50,9 +49,8 @@
 .memos {
 	height: 200px;
 	width: 200px;
-	background-color: #24b362;
-	margin: 20px;
-	padding: 10px;
+	margin: 10px;
+	padding: 5px;
 }
 
 .memos__edit {
