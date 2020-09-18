@@ -1,16 +1,18 @@
 class SearchController < ApplicationController
 
 def search
-    @word_or_memo_or_tag = params[:option]
+    @model_select = params[:option]
+    @sort_version = params[:sort]
 
-    if @word_or_memo_or_tag == "1"
-      @words = Word.search(params[:search], @word_or_memo_or_tag)
-    elsif @word_or_memo_or_tag == "2"
-      @memos = Memo.search(params[:search], @word_or_memo_or_tag)
-    elsif @word_or_memo_or_tag == "3"
-      @tags = Tag.search(params[:search], @word_or_memo_or_tag)
+    if @model_select == "word"
+      @words = Word.search(params[:search], @sort_version, @model_select)
+    elsif @model_select == "memo"
+      @memos = Memo.search(params[:search], @sort_version, @model_select)
+    elsif @model_select == "tag"
+      @tags = Tag.search(params[:search], @sort_version, @model_select)
     end
   end
+
 
 end
 

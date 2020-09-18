@@ -1,0 +1,12 @@
+<!--検索・並び替え窓-->
+
+<div class="discovery">
+	<div class="discovery__search">
+		<%= form_tag(search_path, method: :get) do %>
+			<%= select_tag(:option, options_for_select([["word","word"],["memo","memo"],["tag","tag"]])) %>
+			<%= select_tag(:sort, options_for_select([["投稿が新しい順", "new"],["投稿が古い順", "old"], ["pickup","pickup"]])) %>
+			<%= text_field_tag :search %>
+			<%= submit_tag '検索' %>
+		<% end %>
+	</div>
+</div>

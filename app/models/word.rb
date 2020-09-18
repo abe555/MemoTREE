@@ -17,11 +17,24 @@ class Word < ApplicationRecord
     gray: 4,
   }
 
-  def self.search(search, word_or_memo_or_tag)
-    if word_or_memo_or_tag == "1"
-      Word.where(['name LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"])
+  def self.search(search, sort_version, model_select)
+    if model_select == "word"
+      if sort_version == "new"
+        Word.where(['name LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"]).order('created_at desc')
+      elsif sort_version == "old"
+        Word.where(['name LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"]).order('created_at asc')
+      elsif sort_version == "pickup"
+        Word.where(['name LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"])
+      end
+
     else
-      Word.all
+      if sort_version == "new"
+        Word.all.order('created_at desc')
+      elsif sort_version == "old"
+        Word.all.order('created_at asc')
+      elsif sort_version == "pickup"
+        Word.all
+      end
     end
   end
 

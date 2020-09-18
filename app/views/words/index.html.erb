@@ -1,7 +1,7 @@
 <div class="main1">
 	<!--タイトル-->
 	<div class="page-ttl">
-		<h2>words</h2>
+		<h2 class="page-ttl__word">words</h2>
 	</div>
 	<!--word投稿ボタン-->
 	<div class="new-btn">
@@ -28,62 +28,13 @@
 			</div>
 		</div>
 	</div>
+
 	<!--検索・並び替え窓-->
-	<div class="discovery">
-		<div class="discovery__search">
-			<%= form_tag(search_path, method: :get) do %>
-				<%= select_tag(:option, options_for_select([["word","1"],["memo","2"],["tag","3"]])) %>
-				<%= text_field_tag :search %>
-				<%= submit_tag '検索' %>
-			<% end %>
-		</div>
-		<div class="discovery__sort">
-			<%= form_tag(search_path, method: :get) do %>
-				<%= select_tag(:choice, options_for_select([["投稿が新しい順", "1"],["投稿が古い順", "2"], ["pickup","3"]])) %>
-				<%= submit_tag '並び替え' %>
-			<% end %>
-		</div>
-	</div>
+	<%= render 'search/search_form' %>
+
 </div>
 
 <div class="main2">
 	<!--word一覧-->
-	<div class="leaves">
-		<% @words.each do |word| %>
-			<% if word.color == "green" %>
-				<div class="words" style="background-color: #00bb85;">
-			<% elsif word.color == "red" %>
-				<div class="words" style="background-color: #f62e36;">
-			<% elsif word.color == "blue" %>
-				<div class="words" style="background-color: #0078ba;">
-			<% elsif word.color == "yellow" %>
-				<div class="words" style="background-color: #d7c447;">
-			<% elsif word.color == "gray" %>
-				<div class="words" style="background-color: #9caeb7;">
-			<% end %>
-				<div class="words__edit">
-					<%= link_to edit_word_path(word), method: :get do %>
-						<span class="glyphicon glyphicon-edit" aria-hidden="true" style="color: white;"></span>
-					<% end %>
-				</div>
-				<div class="words__destroy">
-					<%= link_to word_path(word), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
-						<span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: white;" ></span>
-					<% end %>
-				</div>
-				<div class="words__content">
-					<div class="word-text">
-						<div class="word-text__ttl">
-							<%= word.name %>
-						</div>
-						<div class="word-text__body">
-							<%= word.body %>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		<% end %>
-	</div>
-
+	<%= render 'words/word_index', words: @words %>
 </div>

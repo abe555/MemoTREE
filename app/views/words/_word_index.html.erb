@@ -1,0 +1,37 @@
+<!--memo一覧-->
+<div class="leaves">
+	<% words.each do |word| %>
+		<% if word.color == "green" %>
+			<div class="words" style="background-color: #00bb85;">
+		<% elsif word.color == "red" %>
+			<div class="words" style="background-color: #f62e36;">
+		<% elsif word.color == "blue" %>
+			<div class="words" style="background-color: #0078ba;">
+		<% elsif word.color == "yellow" %>
+			<div class="words" style="background-color: #d7c447;">
+		<% elsif word.color == "gray" %>
+			<div class="words" style="background-color: #9caeb7;">
+		<% end %>
+			<div class="words__edit">
+				<%= link_to edit_word_path(word), method: :get do %>
+					<span class="glyphicon glyphicon-edit" aria-hidden="true" style="color: white;"></span>
+				<% end %>
+			</div>
+			<div class="words__destroy">
+				<%= link_to word_path(word), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+					<span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: white;" ></span>
+				<% end %>
+			</div>
+			<div class="words__content">
+				<div class="word-text">
+					<div class="word-text__ttl">
+						<%= word.name %>
+					</div>
+					<div class="word-text__body">
+						<%= word.body %>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

@@ -1,10 +1,6 @@
 class MemosController < ApplicationController
 	before_action :authenticate_user!
 
-	def new
-		@memo = Memo.new
-	end
-
 	def create
 		memo = Memo.new(memo_params)
 		memo.user_id = current_user.id
@@ -17,6 +13,7 @@ class MemosController < ApplicationController
 	end
 
 	def index
+		@memo = Memo.new
 		@memos = Memo.all
 	end
 

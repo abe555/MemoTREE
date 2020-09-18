@@ -1,0 +1,31 @@
+<!--memo一覧-->
+<div class="leaves">
+	<% memos.each do |memo| %>
+		<% if memo.color == "green" %>
+			<div class="memos" style="background-color: #00bb85;">
+		<% elsif memo.color == "red" %>
+			<div class="memos" style="background-color: #f62e36;">
+		<% elsif memo.color == "blue" %>
+			<div class="memos" style="background-color: #0078ba;">
+		<% elsif memo.color == "yellow" %>
+			<div class="memos" style="background-color: #d7c447;">
+		<% elsif memo.color == "gray" %>
+			<div class="memos" style="background-color: #9caeb7;">
+		<% end %>
+
+		<div class="memos__edit">
+			<%= link_to edit_memo_path(memo) do %>
+					<span class="glyphicon glyphicon-edit" aria-hidden="true" style="color: white;"></span>
+				<% end %>
+			</div>
+			<div class="memos__destroy">
+				<%= link_to memo_path(memo), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+					<span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: white;" ></span>
+				<% end %>
+			</div>
+			<div class="memos__content">
+				<%= memo.body %>
+			</div>
+		</div>
+	<% end %>
+</div>

@@ -36,11 +36,24 @@ class Memo < ApplicationRecord
 #    end
 #  end
 
-  def self.search(search, word_or_memo_or_tag)
-    if word_or_memo_or_tag == "2"
-      Memo.where(['body LIKE ?', "%#{search}%"])
+  def self.search(search, sort_version, model_select)
+    if model_select == "memo"
+      if sort_version == "new"
+        Memo.where(['body LIKE ?', "%#{search}%"]).order("created_at desc")
+      elsif sort_version == "old"
+        Memo.where(['body LIKE ?', "%#{search}%"]).order("created_at asc")
+      elsif sort_version == "pickup"
+        Memo.where(['body LIKE ?', "%#{search}%"])
+      end
+
     else
-      Memo.all
+      if sort_version == "new"
+        Memo.all.order("created_at desc")
+      elsif sort_version == "old"
+        Memo.all.order("created_at asc")
+      elsif sort_version == "pickup"
+        Memo.all
+      end
     end
   end
 
