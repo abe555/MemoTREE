@@ -43,7 +43,7 @@
 
 // [ ページのmain ]
 .main1 {
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 }
 
@@ -54,20 +54,15 @@
 
 // [ ページタイトル ]
 .page-ttl {
-	margin-left: 20px;
+	margin: 0 0 20px 20px;
 	float: left;
-}
-.page-ttl > h2 {
-  padding: 1rem 2rem;
-  color: #fff;
-  background: #094;
-  -webkit-box-shadow: 5px 5px 0 #007032;
-  box-shadow: 5px 5px 0 #007032;
 }
 
 // [ 検索・並べ替え窓 ]
 .discovery {
 	margin: 20px;
+	width: 100%;
+	clear: both;
 }
 .discovery__sort {
 	margin: 10px;

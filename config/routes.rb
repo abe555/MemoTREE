@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   patch 'mypage' => 'users#update', as: 'update_mypage'
 
   get "search" => 'search#search'
+  get "memos_sort" => 'search#memosort'
+  get "words_sort" => 'search#wordsort'
   get '/post/tag/:name', to: "memos#hashtag"
 end

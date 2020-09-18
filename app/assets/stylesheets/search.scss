@@ -1,3 +1,21 @@
 // Place all the styles related to the search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.page-ttl__search {
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #1e90ff;
+  -webkit-box-shadow: 5px 5px 0 #1872cc;
+  box-shadow: 5px 5px 0 #1872cc;
+}
+
+.main2__ttl-word {
+  color: #fff;
+  background: #094;
+}
+
+.main2__ttl-memo {
+  color: #fff;
+  background: #ffa500;
+}

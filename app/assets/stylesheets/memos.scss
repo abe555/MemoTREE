@@ -2,11 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// [ タイトル ]
+.page-ttl__memo {
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #ffa500;
+  -webkit-box-shadow: 5px 5px 0 #cc8500;
+  box-shadow: 5px 5px 0 #cc8500;
+}
+
 // [ memo作成ボタン ]
 .new-btn{
-	display: flex;
-	justify-content: flex-end;
-	margin: 20px 50px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 50px;
 }
 .new-btn__icon {
 	font-size: 36px;
