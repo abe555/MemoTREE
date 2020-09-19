@@ -4,22 +4,46 @@
 
 
 .top {
-	width: 80%;
-	display: flex;
-	margin: 45px auto;
-	justify-content: center;
-	align-items: center;
+  width: 90%;
+  display: flex;
+  margin: 45px auto;
+  justify-content: center;
+  align-items: center;
 }
 .top__text {
-	width: 40%;
-	padding: 20px;
-	text-align: center;
-	background-color: #f2f2f2;
+  width: 30%;
+  padding: 20px;
+  text-align: center;
+  background-color: #f2f2f2;
 }
 .top__enter {
-	width: 40%;
-	text-align: center;
+  width: 40%;
+  text-align: center;
 }
+
+// [ aboutページ ]
+.top__slide {
+  width: 60%;
+  margin: 10px;
+}
+#container {
+  height: 100px;
+}
+.img-01 {
+  background-image: url(img01.jpg);
+}
+.img-02 {
+  background-image: url(img02.jpg);
+}
+.img-03 {
+  background-image: url(img03.jpg);
+}
+.img-04 {
+  background-image: url(img04.jpg);
+}
+
+
+// [ login ]
 .enter-btn__field {
 	margin: 45px;
 	text-align: center;
