@@ -18,63 +18,67 @@
   margin: 20px 50px;
 }
 .new-btn__icon {
-	font-size: 36px;
-	text-align:center;
-	padding: 18px;
-	width: 75px;
-	height: 75px;
-	border-radius: 50%;
-	border: solid #f2f2f2;
+  font-size: 36px;
+  text-align:center;
+  padding: 18px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: solid #f2f2f2;
 }
 
 // [ memo作成フォーム ]
 .new-leaf {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	display: none;
-	margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  margin: 0 auto;
 }
 .new-leaf__form {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 .modal-content {
-	padding: 15px;
-	height: 350px;
+  padding: 15px;
+  height: 350px;
 }
 .model-content__form {
-	width: 100%;
-	height: 100px;
+  width: 100%;
+  height: 100px;
 }
 
 // [ memo一覧 ]
 .leaves {
-	margin: 0 auto;
-	height: 500px;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 .memos {
-	height: 200px;
-	width: 200px;
-	margin: 10px;
-	padding: 5px;
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  padding: 5px;
 }
 
 .memos__edit {
-	float: left;
-	font-size: 22px;
-	margin-left: 5px;
+  float: left;
+  font-size: 22px;
+  margin-left: 5px;
+}
+.memos__pickup {
+  float: left;
+  margin-left: 60px;
+  font-size: 22px;
 }
 .memos__destroy {
-	float: right;
-	font-size: 24px;
+  float: right;
+  font-size: 24px;
 }
 .memos__content {
-	margin-top: 30px;
-	width: 100%;
-	height: 150px;
-	background-color: #fff;
-	padding: 10px;
+  margin-top: 30px;
+  width: 100%;
+  height: 150px;
+  background-color: #fff;
+  padding: 10px;
 }

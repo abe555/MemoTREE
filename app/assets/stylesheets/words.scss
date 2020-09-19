@@ -13,89 +13,93 @@
 
 // [ word作成ボタン ]
 .new-btn{
-	display: flex;
-	justify-content: flex-end;
-	margin: 20px 50px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 50px;
 }
 
 .new-btn__icon {
-	font-size: 36px;
-	text-align:center;
-	padding: 18px;
-	width: 75px;
-	height: 75px;
-	border-radius: 50%;
-	border: solid #f2f2f2;
+  font-size: 36px;
+  text-align:center;
+  padding: 18px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: solid #f2f2f2;
 }
 
 // [ wordcard作成フォーム ]
 .new-leaf {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	display: none;
-	margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  margin: 0 auto;
 }
 .new-leaf__form {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 .modal-content {
-	padding: 15px;
-	height: 300px;
+  padding: 15px;
+  height: 300px;
 }
 .model-content__form {
-	width: 100%;
-	height: 100px;
+  width: 100%;
+  height: 100px;
 }
 
 // [ word一覧詳細 ]
 .leaves {
-	margin: 0 auto;
-	height: 500px;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 .words {
-	height: 200px;
-	width: 260px;
-	margin: 10px;
-	padding: 5px;
+  height: 200px;
+  width: 260px;
+  margin: 10px;
+  padding: 5px;
 }
 
 .words__edit {
-	float: left;
-	font-size: 22px;
-	margin-left: 5px;
+  float: left;
+  font-size: 22px;
+  margin-left: 5px;
+}
+.words__pickup {
+  float: left;
+  font-size: 22px;
+  margin-left: 90px;
 }
 .words__destroy {
-	float: right;
-	font-size: 24px;
+  float: right;
+  font-size: 24px;
 }
 .words__content {
-	margin-top: 30px;
-	width: 100%;
-	height: 150px;
-	background-color: #fff;
-	padding: 10px;
+  margin-top: 30px;
+  width: 100%;
+  height: 150px;
+  background-color: #fff;
+  padding: 10px;
 }
 .word-text__ttl {
-	text-align: center;
-	margin-bottom: 10px;
-	font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 // [ editページ ]
 
 .edit-leaf {
-	margin: 0 auto;
-	padding: 15px;
-	width: 500px;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin: 0 auto;
+  padding: 15px;
+  width: 500px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .edit-leaf__form {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 .edit-leaf__back {
-	margin-top: 25px;
+  margin-top: 25px;
 }

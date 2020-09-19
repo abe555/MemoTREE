@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :memos
   resources :words
+  resources :memos
 
   root :to => 'homes#top'
   get "home/about" => 'homes#about'
@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get "memos_sort" => 'search#memosort'
   get "words_sort" => 'search#wordsort'
   get '/post/tag/:name', to: "memos#hashtag"
+  get 'pickup' => 'pickup#index'
 end
