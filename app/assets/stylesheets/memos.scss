@@ -50,7 +50,6 @@
 // [ memo一覧 ]
 .leaves {
   margin: 0 auto;
-  height: 500px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -69,6 +68,7 @@
 }
 .memos__pickup {
   float: left;
+  margin-left: 60px;
   font-size: 22px;
 }
 .memos__destroy {

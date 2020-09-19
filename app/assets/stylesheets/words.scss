@@ -51,7 +51,6 @@
 // [ word一覧詳細 ]
 .leaves {
   margin: 0 auto;
-  height: 500px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -71,6 +70,7 @@
 .words__pickup {
   float: left;
   font-size: 22px;
+  margin-left: 90px;
 }
 .words__destroy {
   float: right;
