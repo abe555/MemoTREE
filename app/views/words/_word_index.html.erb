@@ -17,6 +17,11 @@
 					<span class="glyphicon glyphicon-edit" aria-hidden="true" style="color: white;"></span>
 				<% end %>
 			</div>
+			<div class="words__pickup">
+					<% if word.pickup == 1 %>
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					<% end %>
+				</div>
 			<div class="words__destroy">
 				<%= link_to word_path(word), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
 					<span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: white;" ></span>

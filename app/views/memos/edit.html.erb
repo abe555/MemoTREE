@@ -11,6 +11,7 @@
 				<label><%= form.radio_button :color, :blue %>blue</label>
 				<label><%= form.radio_button :color, :yellow %>yellow</label>
 				<label><%= form.radio_button :color, :orange %>orange</label></br>
+				<p>pickup</p><%= form.check_box :pickup %>
 				<%= form.submit '編集を保存', class: "btn btn-success" %>
 			<% end %>
 
