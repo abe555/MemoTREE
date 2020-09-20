@@ -16,25 +16,17 @@ class Memo < ApplicationRecord
 
   # tag登録機能関係
 
-#  after_create do
-#    memo = Memo.find_by(id: self.id)
-#    tags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+  after_create do
+    memo = Memo.find_by(id: self.id)
+    tags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
 
-#    tags.uniq.map do |t|
-#      hashtag = Tag.find_or_create_by(hashname: t.downcase.delete('#'))
-#      memo.tags << hashtag
-#    end
-#  end
+    tags.uniq.map do |t|
+      #byebug
+      hashtag = Tag.find_or_create_by(hashname: t.downcase.delete('#'))
+      memo.tags << hashtag
+    end
+  end
 
-#  before_update do
-#    memo = Memo.find_by(id: self.id)
-#    tag.tags.clear
-#    hashtags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
-#    hashtags.uniq.map do |t|
-#      hashtag = Tag.find_or_create_by(hashname: tag.downcase.delete('#'))
-#      memo.tags << hashtag
-#    end
-#  end
 
   def self.search(search, sort_version, model_select)
     if model_select == "memo"
