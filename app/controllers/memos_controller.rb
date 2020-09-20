@@ -9,12 +9,10 @@ class MemosController < ApplicationController
 		redirect_to memos_path
 	end
 
-	def show
-	end
-
 	def index
 		memo = Memo.new
-		@memos = Memo.page(params[:page]).reverse_order.per(10)
+		@user = current_user
+		@memos = @user.memos.page(params[:page]).reverse_order.per(10)
 	end
 
 	def edit
