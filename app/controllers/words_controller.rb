@@ -13,11 +13,10 @@ class WordsController < ApplicationController
 		redirect_to words_path
 	end
 
-	def show
-	end
-
 	def index
-		@words = Word.page(params[:page]).reverse_order.per(8)
+		word = Word.new
+		@user = current_user
+		@words = @user.words.page(params[:page]).reverse_order.per(8)
 	end
 
 	def edit
