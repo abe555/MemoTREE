@@ -18,75 +18,62 @@
 
 // [ header関係 ]
 .header1 {
-	width: 100%;
-	height: 20vh;
-	background: green;
-	font-size: 36px;
+  width: 100%;
+  height: 20vh;
+  background: green;
+  font-size: 36px;
 }
 .header1__lg {
-	margin: 5vh 20px;
-	float: left;
+  margin: 5vh 20px;
+  float: left;
 }
 .btn1 {
-	height: 100%;
-	width: 50%;
-	float: right;
-	display: flex;
-	flex-direction: row; //左から並べる
-	justify-content: flex-end; //右寄せ
-	align-items: center; //上下の中央揃え
-	list-style: none;
+  height: 100%;
+  width: 50%;
+  float: right;
+  display: flex;
+  flex-direction: row; //左から並べる
+  justify-content: flex-end; //右寄せ
+  align-items: center; //上下の中央揃え
+  list-style: none;
 }
 .btn1__list{
-	margin: 10px;
+  margin: 10px;
 }
 
 // [ ページのmain ]
 .main1 {
-	width: 90%;
-	margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .main2 {
-	width: 89%;
-	margin: 0 auto;
+  width: 89%;
+  margin: 0 auto;
 }
 
 // [ ページタイトル ]
 .page-ttl {
-	margin: 0 0 20px 20px;
-	float: left;
+  margin: 0 0 20px 20px;
+  float: left;
 }
 
 // [ 検索・並べ替え窓 ]
 .discovery {
-	margin: 20px;
-	width: 100%;
-	clear: both;
+  margin: 20px;
+  width: 100%;
+  clear: both;
 }
 .discovery__sort {
-	margin: 10px;
+  margin: 10px;
 }
 
 .enter__SNS > i {
   font-size: 100px;
 }
 
-// [ aboutページ ]
-
-#container {
-  background-color: red;
-  height: 500px;
-}
-.image1 {
-  background-image: url(image1.jpg);
-}
-.image2 {
-  background-image: url(image2.png);
-}
-.image3 {
-  background-image: url(image3.png);
-}
-.image4 {
-  background-image: url(image4.png);
+.page-bar {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }

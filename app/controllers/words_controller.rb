@@ -17,7 +17,7 @@ class WordsController < ApplicationController
 	end
 
 	def index
-		@words = Word.all
+		@words = Word.page(params[:page]).reverse_order.per(8)
 	end
 
 	def edit

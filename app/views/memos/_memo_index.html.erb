@@ -29,8 +29,13 @@
 						<% end %>
 				</div>
 				<div class="memos__content">
-						<%= memo.body %>
+						<%= simple_format(memo.body) %>
 				</div>
 			</div>
 	<% end %>
+
+	<div class="page-bar">
+		<%= paginate @memos %>
+	</div>
+
 </div>

@@ -13,8 +13,8 @@ class MemosController < ApplicationController
 	end
 
 	def index
-		@memo = Memo.new
-		@memos = Memo.all
+		memo = Memo.new
+		@memos = Memo.page(params[:page]).reverse_order.per(10)
 	end
 
 	def edit

@@ -33,10 +33,15 @@
 						<%= word.name %>
 					</div>
 					<div class="word-text__body">
-						<%= word.body %>
+						<%= simple_format(word.body) %>
 					</div>
 				</div>
 			</div>
 		</div>
 	<% end %>
+
+	<div class="page-bar">
+		<%= paginate @words %>
+	</div>
+
 </div>
