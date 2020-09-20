@@ -82,11 +82,23 @@
   height: 150px;
   background-color: #fff;
   padding: 10px;
+  min-width: 0;
+}
+.word-text {
+  display: block;
+  overflow: hidden;
+  height: 135px;
 }
 .word-text__ttl {
   text-align: center;
   margin-bottom: 10px;
   font-size: 18px;
+}
+.word-text__body {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 // [ editページ ]
 

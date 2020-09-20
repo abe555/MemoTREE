@@ -1,15 +1,12 @@
 class WordsController < ApplicationController
 	before_action :authenticate_user!
 
-	def new
-		word = Word.new
-	end
-
 	def create
 		@word = Word.new(word_params)
 		@word.user_id = current_user.id
 		@word.save
-		@words = Word.all
+		@user = current_user
+		@words = @user.words.page(params[:page]).reverse_order.per(8)
 		redirect_to words_path
 	end
 
@@ -36,7 +33,8 @@ class WordsController < ApplicationController
 	def destroy
 		word = Word.find(params[:id])
 		word.destroy
-		@words = Word.all
+		@user = current_user
+		@words = @user.words.page(params[:page]).reverse_order.per(8)
 		word = Word.new
 		render 'index'
 	end

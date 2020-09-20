@@ -5,7 +5,7 @@ class MemosController < ApplicationController
 		memo = Memo.new(memo_params)
 		memo.user_id = current_user.id
 		memo.save
-		@memos = Memo.all
+		@memos = @user.memos.page(params[:page]).reverse_order.per(10)
 		redirect_to memos_path
 	end
 
@@ -32,7 +32,7 @@ class MemosController < ApplicationController
 	def destroy
 		memo = Memo.find(params[:id])
 		memo.destroy
-		@memos = Memo.all
+		@memos = @user.memos.page(params[:page]).reverse_order.per(10)
 		memo = Memo.new
 		render 'index'
 	end

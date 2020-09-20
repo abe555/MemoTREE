@@ -1,7 +1,7 @@
 class Memo < ApplicationRecord
 
   belongs_to :user
-  has_and_belongs_to_many :tags, through: :memo_tags
+  has_many :memo_tags, dependent: :destroy
 
   validates :user_id, presence: true
   validates :body, presence: true
