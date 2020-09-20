@@ -38,4 +38,9 @@
 <div class="main2">
 	<!--word一覧-->
 	<%= render 'words/word_index', words: @words %>
+
+	<div class="page-bar">
+		<%= paginate @words %>
+	</div>
+
 </div>
