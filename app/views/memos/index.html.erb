@@ -34,4 +34,9 @@
 <!--memo一覧-->
 <div class="main2">
 	<%= render 'memos/memo_index', memos: @memos %>
+
+	<div class="page-bar">
+		<%= paginate @memos %>
+	</div>
+
 </div>
