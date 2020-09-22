@@ -4,8 +4,12 @@ class MemosController < ApplicationController
 	def create
 		memo = Memo.new(memo_params)
 		memo.user_id = current_user.id
-		memo.save
-		redirect_to memos_path
+		if memo.save
+		  flash[:notice] = "successfully created memo!"
+		  redirect_to memos_path
+		else
+		  render 'index'
+		end
 	end
 
 	def index

@@ -1,4 +1,13 @@
+<div class="main-flash">
+	<% if flash[:notice] %>
+    	<div class="alert alert-success main-flash__text">
+    		<%= flash[:notice] %>
+    	</div>
+	<% end %>
+</div>
+
 <div class="main1">
+
 	<div class="page-ttl">
 		<h2 class="page-ttl__memo">memos</h2>
 	</div>

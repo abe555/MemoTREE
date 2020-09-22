@@ -1,6 +1,8 @@
 class SearchController < ApplicationController
 
-def search
+  before_action :authenticate_user!
+
+  def search
     @model_select = params[:option]
     @sort_version = params[:sort]
 
