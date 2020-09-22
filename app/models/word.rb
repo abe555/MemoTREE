@@ -47,8 +47,6 @@ class Word < ApplicationRecord
         Word.where(['name LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"]).order('created_at desc')
       elsif sort_version == "old"
         Word.where(['name LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"]).order('created_at asc')
-      elsif sort_version == "pickup"
-        Word.where(['name LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"])
       end
 
     else
@@ -56,8 +54,6 @@ class Word < ApplicationRecord
         Word.all.order('created_at desc')
       elsif sort_version == "old"
         Word.all.order('created_at asc')
-      elsif sort_version == "pickup"
-        Word.all
       end
     end
   end

@@ -2,14 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.mypage {
-	margin-top: 100px;
+.page-ttl__mypage {
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #f62e36;
+  -webkit-box-shadow: 5px 5px 0 #cc272c;
+  box-shadow: 5px 5px 0 #cc272c;
 }
 
-.mypage-edit-btn {
-	margin: 20pxs;
-	float: right;
+.mypage {
+  display: flex;
+  width: 100%;
+  margin: 50px 0;
 }
-.mypage-edit-btn__edit {
-	margin-left: 10px;
+
+.mypage__tags {
+  width: 150px;
+  padding: 10px;
+  background: #e6e6e6;
+  -webkit-box-shadow: 5px 5px 0 #cccccc;
+  box-shadow: 5px 5px 0 #cccccc;
+}
+
+.mypage__table {
+  width: 700px;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.user-info {
+  width: 600px;
+}
+
+.user-info__info {
+  margin-bottom: 10px;
+}
+.user-info__btn {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.mypage__sum {
+  margin: 0 20px;
+  width: 200px;
+  height: 150px;
+  padding: 10px;
+  background: #e6e6e6;
+  -webkit-box-shadow: 5px 5px 0 #cccccc;
+  box-shadow: 5px 5px 0 #cccccc;
 }

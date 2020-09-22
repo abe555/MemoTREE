@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require rails-ujs
+//= require jquery-ui/widgets/sortable
+//= require jquery-ui/effects/effect-highlight
 //= require activestorage
 //= require bootstrap-sprockets
 //= require_tree .

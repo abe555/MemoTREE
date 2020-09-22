@@ -1,31 +1,80 @@
 <div class="main1">
+	<% if flash[:notice] %>
+    	<div class="flash">
+    		<%= flash[:notice] %>
+    	</div>
+	<% end %>
+
 	<!--タイトル-->
 	<div class="page-ttl">
-		<h2>マイページ</h2>
+		<h2 class="page-ttl__mypage">マイページ</h2>
 	</div>
-	<div class="mypage col-md-8">
-		<!--編集ボタン-->
-		<div class="new-btn">
-			<%= link_to '登録情報編集', edit_mypage_path, class: "btn btn-success" %>
+
+	<!--検索・並び替え窓-->
+	<%= render 'search/search_form' %>
+
+</div>
+
+<div class="main3">
+	<div class="mypage">
+
+		<!--word一覧-->
+		<div class="mypage__tags">
+			<div class="tags__ttl">
+			  <p>登録したタグ一覧</p>
+			</div>
+			<div class="tags__idx">
+			  <div class="tag">
+				<% @tags.each do |tag| %>
+				  <div class="tag__content">
+				    <span><%= tag.hashname %></span>
+				  </div>
+				<% end %>
+			  </div>
+			</div>
 		</div>
-		<!--会員情報-->
-		<table class="table">
-			<tr>
-				<td>登録名</td>
-				<td><%= @user.name %></td>
-			</tr>
-			<tr>
-				<td>登録したメールアドレス</td>
-				<td><%= @user.email %></td>
-			</tr>
-			<tr>
-				<td>これまで登録した単語数</td>
-				<td><%= @user.words.count %></td>
-			</tr>
-			<tr>
-				<td>これまで登録したメモ数</td>
-				<td><%= @user.memos.count %></td>
-			</tr>
-		</table>
+
+		<div class="mypage__table">
+
+			<div class="user-info">
+
+				<!--会員情報-->
+				<div class="user-info__info">
+					<p>ユーザー登録情報</p>
+					<table class="table table-striped">
+						<tr>
+							<th>登録名</th>
+							<td><%= @user.name %></td>
+						</tr>
+						<tr>
+							<th>登録したメールアドレス</th>
+							<td><%= @user.email %></td>
+						</tr>
+					</table>
+				</div>
+
+				<!--編集ボタン-->
+				<div class="user-info__btn">
+					<%= link_to '登録情報編集', edit_mypage_path, class: "btn btn-success" %>
+				</div>
+			</div>
+		</div>
+
+				<!--登録した単語・メモ数集計-->
+		<div class="mypage__sum">
+			<p>これまでの軌跡</p>
+					<table class="table table-stripedx">
+						<tr>
+							<th>登録した単語数</th>
+							<td><%= @user.words.count %></td>
+						</tr>
+						<tr>
+							<th>登録したメモ数</th>
+							<td><%= @user.memos.count %></td>
+						</tr>
+					</table>
+		</div>
+
+
 	</div>
 </div>

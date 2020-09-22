@@ -17,15 +17,13 @@
 		<h2 class="main2__ttl-memo">Memo</h2>
 		<%= render 'memos/memo_index', memos: @memos %>
 
-	<% elsif @model == "tag" %>
-		<h2>tag</h2>
-		<%= tag.each do |tag| %>
-			<table>
-				<tr>
-					<%= tag.hashname %>
-				</tr>
-			</table>
-		<% end %>
+	<% elsif @model_select == "tag" %>
+		<h2 class="main2__ttl-word">Word</h2>
+		<%= render 'words/word_index', words: @tag.words %>
+
+		<h2 class="main2__ttl-memo">Memo</h2>
+		<%= render 'memos/memo_index', memos: @tag.memos %>
+
 	<% end %>
 
 </div>
