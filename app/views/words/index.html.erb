@@ -1,4 +1,10 @@
 <div class="main1">
+
+	<% if flash[:notice] %>
+    		<div class="flash">
+    			<%= flash[:notice] %>
+    		</div>
+	<% end %>
 	<!--タイトル-->
 	<div class="page-ttl">
 		<h2 class="page-ttl__word">words</h2>

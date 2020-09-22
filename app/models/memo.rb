@@ -46,8 +46,6 @@ class Memo < ApplicationRecord
         Memo.where(['body LIKE ?', "%#{search}%"]).order("created_at desc")
       elsif sort_version == "old"
         Memo.where(['body LIKE ?', "%#{search}%"]).order("created_at asc")
-      elsif sort_version == "pickup"
-        Memo.where(['body LIKE ?', "%#{search}%"])
       end
 
     else
@@ -55,8 +53,6 @@ class Memo < ApplicationRecord
         Memo.all.order("created_at desc")
       elsif sort_version == "old"
         Memo.all.order("created_at asc")
-      elsif sort_version == "pickup"
-        Memo.all
       end
     end
   end

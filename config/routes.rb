@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :words
-  resources :memos
+  resources :words, expect: [:new, :show]
+  resources :memos, expect: [:new, :show]
+  resources :tags, only: [:show, :index]
 
   root :to => 'homes#top'
   get "home/about" => 'homes#about'
