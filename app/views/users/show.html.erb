@@ -1,9 +1,12 @@
-<div class="main1">
+<div class="main-flash">
 	<% if flash[:notice] %>
-    	<div class="flash">
+    	<div class="alert alert-success main-flash__text">
     		<%= flash[:notice] %>
     	</div>
 	<% end %>
+</div>
+
+<div class="main1">
 
 	<!--タイトル-->
 	<div class="page-ttl">
