@@ -18,11 +18,21 @@
 		<%= render 'memos/memo_index', memos: @memos %>
 
 	<% elsif @model_select == "tag" %>
-		<h2 class="main2__ttl-word">Word</h2>
-		<%= render 'words/word_index', words: @tag.words %>
-
-		<h2 class="main2__ttl-memo">Memo</h2>
-		<%= render 'memos/memo_index', memos: @tag.memos %>
+		<span><%= params[:search] %>の検索結果</span>
+		<div class="mypage__tags">
+			<div class="tags__ttl">
+			  <p>登録したタグ一覧</p>
+			</div>
+			<div class="tags__idx">
+			  <div class="tag">
+				<% @tags.each do |tag| %>
+				  <div class="tag__content">
+				    <span><%= tag.hashname %></span>
+				  </div>
+				<% end %>
+			  </div>
+			</div>
+		</div>
 
 	<% end %>
 
