@@ -1,5 +1,6 @@
 class Tag < ApplicationRecord
   validates :hashname, presence: true, length: {maximum:99}
+  validates :user_id, presence: true
 
   has_and_belongs_to_many :words, through: :word_tags
   has_many :word_relations, through: :word_tags, source: :word

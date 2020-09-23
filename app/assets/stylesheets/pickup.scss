@@ -1,3 +1,16 @@
 // Place all the styles related to the pickup controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.page-ttl-pu {
+	width: 100%;
+}
+.page-ttl-pu__pickup {
+  width: 130px;
+  text-align: center;
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #6ab547;
+  -webkit-box-shadow: 5px 5px 0 #59993c;
+  box-shadow: 5px 5px 0 #59993c;
+}
