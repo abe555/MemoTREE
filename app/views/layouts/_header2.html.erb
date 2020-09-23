@@ -1,6 +1,6 @@
 <div class="header1">
 	<div class="header1__lg">
-		<!--<li class="">ようこそ<%= current_user.name %>さん</li>-->
+		<div class="logo"></div>
 	</div>
 	<div class="btn1">
 			<li class="dropdown btn1__list">
@@ -8,7 +8,6 @@
 				<ul class="dropdown-menu" role="menu">
 					<li role="presentation"><%= link_to 'マイページ', mypage_path(current_user) %></li>
 					<li role="presentation"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-
 				</ul>
 			</li>
 			<li class="btn1__list"><%= link_to 'Word', words_path, class: "btn btn-default" %></li>

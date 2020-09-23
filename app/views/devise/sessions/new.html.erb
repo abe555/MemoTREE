@@ -24,11 +24,19 @@
         <div class="enterform">
           <%= f.submit "ログイン", class: "btn btn-success enterform__btn" %>
 
-          <%= link_to "新規登録はこちら", new_user_registration_path, class: "btn btn-warning enterform__btn" %>
+          <%= link_to "新規登録はこちら", new_user_registration_path, class: "btn btn-primary enterform__btn" %>
         </div>
       </div>
 
     <% end %>
+
+    <div class="easy-login">
+        <p>↓テストユーザーとしてすぐログイン出来ます↓</p>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= f.hidden_field :name, value: 'テストユーザー' %>
+            <%= f.hidden_field :password, value: 'testtest' %>
+            <%= f.submit '簡単ログイン', class: 'btn btn-warning enterform__btn' %>
+      <% end %>
 
   </div>
 

@@ -24,8 +24,16 @@
   font-size: 36px;
 }
 .header1__lg {
-  margin: 5vh 20px;
+  margin: 5px;
   float: left;
+}
+.logo {
+  height: 100px;
+  width: 100px;
+  background-image: url(logo.jpg);
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
 }
 .btn1 {
   height: 100%;
@@ -50,11 +58,13 @@
 .main2 {
   width: 89%;
   margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 .main3 {
   width: 80%;
   margin: 0 auto;
+  padding-bottom: 50px;
 }
 // [ エラーメッセージ ]
 .main-flash {
