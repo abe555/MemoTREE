@@ -5,7 +5,6 @@ class TagsController < ApplicationController
   	@tag = Tag.find(params[:id])
   	@words = @tag.words
   	@word_relations = @tag.word_relations
-
   	@memos = @tag.memos
   end
 

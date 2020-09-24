@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @tags = Tag.all
+    @tags = @user.tags.all
   end
 
   def edit

@@ -34,6 +34,17 @@
       </div>
     <% end %>
 
+    <div class="easy-login">
+        <p>↓テストユーザーとしてすぐログイン出来ます↓</p>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= f.hidden_field :name, value: 'テストユーザー' %>
+            <%= f.hidden_field :password, value: 'testtest' %>
+            <%= f.submit '簡単ログイン', class: 'btn btn-warning enterform__btn' %>
+      <% end %>
+
+    </div>
+
+
     <div class="enter__SNS">
       <h4>SNS認証</h4>
       <%= link_to user_facebook_omniauth_authorize_path do %>
