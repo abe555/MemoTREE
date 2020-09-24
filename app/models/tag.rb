@@ -3,9 +3,13 @@ class Tag < ApplicationRecord
   validates :user_id, presence: true
 
   has_and_belongs_to_many :words, through: :word_tags
+  has_many :word_tags
+  #has_many :words, through: :word_tags
   #has_many :word_relations, through: :word_tags, source: :word
 
   has_and_belongs_to_many :memos, through: :memo_tags
+  has_many :memo_tags
+  #has_many :memos, through: :memo_tags
   #has_many :memo_relations, through: :memo_tags, source: :memo
 
   belongs_to :user

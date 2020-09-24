@@ -1,13 +1,12 @@
 class Word < ApplicationRecord
 
   belongs_to :user
-  has_many :word_tags, dependent: :destroy
-  has_many :tags, through: :word_tags, dependent: :destroy
+  has_many :word_tags
+  has_many :tags, through: :word_tags
 
   validates :user_id, presence: true
   validates :name, presence: true
   validates :body, presence: true
-
 
   enum color: {
   	green: 0,
@@ -24,8 +23,7 @@ class Word < ApplicationRecord
     tags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
 
     tags.uniq.map do |t|
-      hashtag = Tag.find_or_create_by(hashname: t.downcase.delete('#'))
-      byebug
+      hashtag = Tag.find_or_create_by(user_id: self.user_id, hashname: t.downcase.delete('#'))
       word.tags << hashtag
     end
   end
@@ -36,7 +34,7 @@ class Word < ApplicationRecord
     tags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
 
     tags.uniq.map do |t|
-      hashtag = Tag.find_or_create_by(hashname: t.downcase.delete('#'))
+      hashtag = Tag.find_or_create_by(user_id: self.user_id, hashname: t.downcase.delete('#'))
       word.tags << hashtag
     end
   end
