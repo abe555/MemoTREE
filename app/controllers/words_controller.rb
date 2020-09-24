@@ -8,7 +8,7 @@ class WordsController < ApplicationController
       flash[:notice] = "successfully create word!"
       redirect_to words_path
     else
-      render 'index'
+      redirect_to words_path
     end
   end
 
