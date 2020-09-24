@@ -25,6 +25,5 @@ Rails.application.routes.draw do
   get "search" => 'search#search'
   get "memos_sort" => 'search#memosort'
   get "words_sort" => 'search#wordsort'
-  get '/post/tag/:name', to: "memos#hashtag"
   get 'pickup' => 'pickup#index'
 end

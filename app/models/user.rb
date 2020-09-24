@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :words, dependent: :destroy
   has_many :memos, dependent: :destroy
+  has_many :tags, dependent: :destroy
 
   validates :name, presence: true
   validates :email, presence: true

@@ -2,7 +2,7 @@ class Word < ApplicationRecord
 
   belongs_to :user
   has_many :word_tags, dependent: :destroy
-  has_many :tags, through: :word_tags
+  has_many :tags, through: :word_tags, dependent: :destroy
 
   validates :user_id, presence: true
   validates :name, presence: true
@@ -25,6 +25,7 @@ class Word < ApplicationRecord
 
     tags.uniq.map do |t|
       hashtag = Tag.find_or_create_by(hashname: t.downcase.delete('#'))
+      byebug
       word.tags << hashtag
     end
   end
