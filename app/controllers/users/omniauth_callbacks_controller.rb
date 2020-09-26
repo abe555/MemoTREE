@@ -36,6 +36,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_for(:google)
   end
 
+  private
+
   def callback_for(provider)
     @omniauth = request.env['omniauth.auth']
     # SNS側から取得したデータをハッシュで受け取る

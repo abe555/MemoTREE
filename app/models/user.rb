@@ -19,7 +19,7 @@ class User < ApplicationRecord
     user = User.where(email: auth.info.email).first
 
       if user.present?
-        sns = SnsCredential.create(
+        sns = snscredential.create(
           uid: auth.uid,
           provider: auth.provider,
           user_id: user.id
@@ -27,8 +27,7 @@ class User < ApplicationRecord
       else
         user = User.new(
           name: auth.info.name,
-          email: auth.info.email,
-          password: Devise.friendly_token[0, 20]
+          email: auth.info.email
         )
         sns = SnsCredential.new(
           uid: auth.uid,
@@ -43,8 +42,7 @@ class User < ApplicationRecord
     unless user.present?
       user = User.new(
         name: auth.info.name,
-        email: auth.info.email,
-        password: Devise.friendly_token[0, 20]
+        email: auth.info.email
       )
     end
     return {user: user}
