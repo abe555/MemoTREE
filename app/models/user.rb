@@ -2,8 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+         :recoverable, :rememberable, :validatable, :omniauthable
 
   has_many :sns_credentials, dependent: :destroy
 
@@ -29,6 +28,7 @@ class User < ApplicationRecord
         user = User.new(
           name: auth.info.name,
           email: auth.info.email,
+          password: Devise.friendly_token[0, 20]
         )
         sns = SnsCredential.new(
           uid: auth.uid,
@@ -42,8 +42,9 @@ class User < ApplicationRecord
     user = User.where(id: snscredential.user_id).first
     unless user.present?
       user = User.new(
-        nickname: auth.info.name,
+        name: auth.info.name,
         email: auth.info.email,
+        password: Devise.friendly_token[0, 20]
       )
     end
     return {user: user}
@@ -53,6 +54,7 @@ class User < ApplicationRecord
     uid = auth.uid
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first
+    # SNS側から所得した情報とDBを照らし合わせ、登録があるか確認
     if snscredential.present?
       user = with_sns_data(auth, snscredential)[:user]
       sns = snscredential
