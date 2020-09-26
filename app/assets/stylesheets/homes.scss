@@ -33,13 +33,13 @@
   height: 500px;
 }
 .img-01 {
-  background-image: url(img01.jpg);
+  background-image: image-url("img01.jpg");
 }
 .img-02 {
-  background-image: url(img02.jpg);
+  background-image: image-url("img02.jpg");
 }
 .img-03 {
-  background-image: url(img03.jpg);
+  background-image: image-url("img03.jpg");
 }
 
 
@@ -97,14 +97,9 @@
   margin-top: 25px;
 }
 
-
-
 // [ SNS認証のボタン ]
 .enter__SNS {
 	margin-top: 15px;
 	font-size: 20px;
 }
 
-.enter__SNS > i {
-
-}
