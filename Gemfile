@@ -87,3 +87,7 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+# Capistrano
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
