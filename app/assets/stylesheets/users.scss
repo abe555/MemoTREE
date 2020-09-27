@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// [ ページタイトル ]
 .page-ttl__mypage {
   padding: 1rem 2rem;
   color: #fff;
@@ -10,20 +11,35 @@
   box-shadow: 5px 5px 0 #cc272c;
 }
 
+// [ ページメイン ]
 .mypage {
   display: flex;
   width: 100%;
   margin: 50px 0;
 }
 
+// [ 登録したタグ一覧 ]
 .mypage__tags {
-  width: 150px;
+  width: 200px;
+  height: 300px;
   padding: 10px;
-  background: #e6e6e6;
-  -webkit-box-shadow: 5px 5px 0 #cccccc;
-  box-shadow: 5px 5px 0 #cccccc;
+  background: #d7c447;
+  padding: 30px 10px 10px;
+}
+.tags {
+  height: 100%;
+  padding: 10px;
+  background: #fff;
+  text-overflow: ellipsis;
+}
+.tags__ttl {
+  font-size: 16px;
+  text-align: center;
+  border-bottom: solid 2px black;
+  margin-bottom: 10px;
 }
 
+// [ ユーザー情報 ]
 .mypage__table {
   width: 700px;
   margin: 0 20px;
@@ -31,26 +47,55 @@
   justify-content: center;
   flex-direction: row;
 }
-
 .user-info {
   width: 600px;
+  height: 150px;
+  background: #9caeb7;
+  padding: 30px 10px 5px;
 }
-
 .user-info__info {
-  margin-bottom: 10px;
+  height: 110px;
+  background: #fff;
+  padding: 5px;
+}
+.user-info__info > p {
+  font-size: 16px;
+  text-align: center;
 }
 .user-info__btn {
+  margin-top: 20px;
   display: flex;
   justify-content: flex-start;
 }
 
-
+// [ 今までの投稿数 ]
 .mypage__sum {
   margin: 0 20px;
   width: 200px;
-  height: 150px;
-  padding: 10px;
-  background: #e6e6e6;
-  -webkit-box-shadow: 5px 5px 0 #cccccc;
-  box-shadow: 5px 5px 0 #cccccc;
+  height: 400px;
+}
+.histroy {
+  background: #00bb85;
+  padding: 30px 10px 10px;
+}
+.history__text {
+  height: 100%;
+  background: #fff;
+  padding: 5px;
+}
+.history__text > p {
+  font-size: 16px;
+  text-align: center;
+}
+.links {
+  text-align: center;
+}
+.links-btn {
+  font: black;
+  margin: 10px;
+}
+
+// [ 会員情報編集ページ ]
+.mypage-edit-btn {
+  margin-top: 40px;
 }

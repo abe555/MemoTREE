@@ -11,23 +11,6 @@
   box-shadow: 5px 5px 0 #007032;
 }
 
-// [ word作成ボタン ]
-.new-btn{
-  display: flex;
-  justify-content: flex-end;
-  margin: 20px 50px;
-}
-
-.new-btn__icon {
-  font-size: 36px;
-  text-align:center;
-  padding: 18px;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  border: solid #f2f2f2;
-}
-
 // [ wordcard作成フォーム ]
 .new-leaf {
   position: fixed;
@@ -106,6 +89,7 @@
   margin: 0 auto;
   padding: 15px;
   width: 500px;
+  background: #fff;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 

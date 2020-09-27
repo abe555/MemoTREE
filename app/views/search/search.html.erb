@@ -1,4 +1,4 @@
-<div class="main1">
+<div class="main-top">
 	<div class="page-ttl">
 		<h2 class="page-ttl__search">検索結果</h2>
 	</div>
@@ -8,21 +8,18 @@
 </div>
 
 <!--検索結果表示-->
-<div class="main2">
+<div class="main-bottom">
 	<% if @model_select == "word" %>
-		<h2 class="main2__ttl-word">Word</h2>
+		<h2 class="main-bottom__ttl-word">Word</h2>
 		<%= render 'words/word_index', words: @words %>
 
 	<% elsif @model_select == "memo" %>
-		<h2 class="main2__ttl-memo">Memo</h2>
+		<h2 class="main-bottom__ttl-memo">Memo</h2>
 		<%= render 'memos/memo_index', memos: @memos %>
 
 	<% elsif @model_select == "tag" %>
 		<span><%= params[:search] %>の検索結果</span>
 		<div class="mypage__tags">
-			<div class="tags__ttl">
-			  <p>登録したタグ一覧</p>
-			</div>
 			<div class="tags__idx">
 			  <div class="tag">
 				<% @tags.each do |tag| %>

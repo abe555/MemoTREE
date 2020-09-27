@@ -16,6 +16,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 // [ header関係 ]
 .header1 {
   width: 100%;
@@ -50,30 +56,51 @@
 }
 
 // [ ページのmain ]
-.main1 {
+body {
+  background: #e6e6e6;
+  background-size:cover
+}
+.main-top {
   width: 90%;
   margin: 0 auto;
 }
 
-.main2 {
+.main-bottom {
   width: 89%;
   margin: 0 auto;
   padding-bottom: 50px;
 }
 
-.main3 {
+.main-bottom-mypage {
   width: 80%;
   margin: 0 auto;
   padding-bottom: 50px;
 }
 // [ エラーメッセージ ]
 .main-flash {
-  width: 300px;
+  width: 250px;
   margin: 0 auto;
+  float: right;
 }
 .main-flash__text {
-  width: 300px;
+  width: 250px;
+}
+
+// [ word/memo作成ボタン ]
+.new-btn{
+  position: relative;
   float: right;
+  margin: 20px 50px;
+}
+.new-btn__icon {
+  font-size: 36px;
+  text-align:center;
+  padding: 18px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: solid #a9a9a9;
+  background: #fff;
 }
 
 // [ ページタイトル ]
@@ -100,4 +127,21 @@
   margin: 0 auto;
   width: 100%;
   text-align: center;
+}
+
+// [ word/memo編集ページ ]
+
+.edit-leaf {
+  margin: 0 auto;
+  padding: 15px;
+  width: 500px;
+  background: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.edit-leaf__form {
+  margin: 0 auto;
+}
+.edit-leaf__back {
+  margin-top: 25px;
 }
