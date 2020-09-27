@@ -1,13 +1,5 @@
-<div class="main-flash">
-	<% if flash[:notice] %>
-    	<div class="alert alert-success main-flash__text">
-    		<%= flash[:notice] %>
-    	</div>
-	<% end %>
-</div>
 
-
-<div class="main1">
+<div class="main-top">
 
 	<!--タイトル-->
 	<div class="page-ttl">
@@ -19,6 +11,16 @@
 			<a class="glyphicon glyphicon-pencil new-btn__icon"></a>
 		</div>
 	</div>
+
+	<!--エラーメッセージ-->
+	<div class="main-flash">
+		<% if flash[:notice] %>
+    		<div class="alert alert-success main-flash__text">
+    			<%= flash[:notice] %>
+    		</div>
+		<% end %>
+	</div>
+
 	<!--word投稿フォーム-->
 	<div class="new-leaf modal fade" id="sampleModal">
 		<div class="new-leaf__form modal-dialog">
@@ -45,7 +47,7 @@
 
 </div>
 
-<div class="main2">
+<div class="main-bottom">
 	<!--word一覧-->
 	<%= render 'words/word_index', words: @words %>
 

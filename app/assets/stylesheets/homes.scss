@@ -12,10 +12,10 @@
 }
 .top__text {
   width: 40%;
-  padding: 20px;
+  padding: 20px 30px;
   text-align: center;
   padding: 1rem 2rem;
-  background: #e6e6e6;
+  background: #fff;
   -webkit-box-shadow: 5px 5px 0 #cccccc;
   box-shadow: 5px 5px 0 #cccccc;
 }
@@ -42,7 +42,6 @@
   background-image: image-url("img03.jpg");
 }
 
-
 // [ login ]
 .enter-btn__field {
 	margin: 45px;
@@ -61,12 +60,13 @@
 }
 
 .enter {
+  background: #fff;
 	position: relative;
 	max-width: 360px;
-  	margin: 0 auto 100px;
-  	padding: 30px;
-  	text-align: center;
-  	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin: 0 auto 100px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .enter__ttl {

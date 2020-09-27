@@ -1,12 +1,5 @@
-<div class="main-flash">
-	<% if flash[:notice] %>
-    	<div class="alert alert-success main-flash__text">
-    		<%= flash[:notice] %>
-    	</div>
-	<% end %>
-</div>
 
-<div class="main1">
+<div class="main-top">
 
 	<div class="page-ttl">
 		<h2 class="page-ttl__memo">memos</h2>
@@ -16,6 +9,15 @@
 		<div class="new-btn__circle" data-toggle="modal" data-target="#sampleModal">
 			<a class="glyphicon glyphicon-pencil new-btn__icon"></a>
 		</div>
+	</div>
+
+	<!--エラーメッセージ-->
+	<div class="main-flash">
+		<% if flash[:notice] %>
+    		<div class="alert alert-success main-flash__text">
+    			<%= flash[:notice] %>
+    		</div>
+		<% end %>
 	</div>
 	<!--memo投稿フォーム-->
 	<div class="new-leaf modal fade" id="sampleModal">
@@ -41,7 +43,7 @@
 </div>
 
 <!--memo一覧-->
-<div class="main2">
+<div class="main-bottom">
 	<%= render 'memos/memo_index', memos: @memos %>
 
 	<div class="page-bar">
