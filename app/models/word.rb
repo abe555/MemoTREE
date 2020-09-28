@@ -1,5 +1,4 @@
 class Word < ApplicationRecord
-
   belongs_to :user
   has_many :word_tags
   has_many :tags, through: :word_tags
@@ -9,36 +8,35 @@ class Word < ApplicationRecord
   validates :body, presence: true
 
   enum color: {
-  	green: 0,
-  	red: 1,
-  	blue: 2,
-  	yellow: 3,
+    green: 0,
+    red: 1,
+    blue: 2,
+    yellow: 3,
     gray: 4,
   }
 
-#ハッシュタグ登録機能関係
+  # ハッシュタグ登録機能関係
 
   after_create do
-    word = Word.find_by(id: self.id)
-    tags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    word = Word.find_by(id: id)
+    tags = body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
 
     tags.uniq.map do |t|
-      hashtag = Tag.find_or_create_by(user_id: self.user_id, hashname: t.downcase.delete('#'))
+      hashtag = Tag.find_or_create_by(user_id: user_id, hashname: t.downcase.delete('#'))
       word.tags << hashtag
     end
   end
 
   before_update do
-    word = Word.find_by(id: self.id)
+    word = Word.find_by(id: id)
     word.tags.clear
-    tags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    tags = body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
 
     tags.uniq.map do |t|
-      hashtag = Tag.find_or_create_by(user_id: self.user_id, hashname: t.downcase.delete('#'))
+      hashtag = Tag.find_or_create_by(user_id: user_id, hashname: t.downcase.delete('#'))
       word.tags << hashtag
     end
   end
-
 
   def self.search(search, sort_version, model_select)
     if model_select == "word"
@@ -56,5 +54,4 @@ class Word < ApplicationRecord
       end
     end
   end
-
 end

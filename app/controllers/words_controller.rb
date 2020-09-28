@@ -13,37 +13,37 @@ class WordsController < ApplicationController
   end
 
   def index
-	word = Word.new
-	@user = current_user
-	@words = @user.words.page(params[:page]).reverse_order.per(8)
+    word = Word.new
+    @user = current_user
+    @words = @user.words.page(params[:page]).reverse_order.per(8)
   end
 
   def edit
-	@word = Word.find(params[:id])
+    @word = Word.find(params[:id])
   end
 
   def update
-	word = Word.find(params[:id])
-	if word.update(word_params)
-	  flash[:notice] = "successfully updated word!"
-	  redirect_to words_path
-	else
+    word = Word.find(params[:id])
+    if word.update(word_params)
+      flash[:notice] = "successfully updated word!"
+      redirect_to words_path
+    else
       render 'index'
-	end
+    end
   end
 
   def destroy
-	word = Word.find(params[:id])
-	word.destroy
-	@user = current_user
-	@words = @user.words.page(params[:page]).reverse_order.per(8)
-	word = Word.new
-	render 'index'
+    word = Word.find(params[:id])
+    word.destroy
+    @user = current_user
+    @words = @user.words.page(params[:page]).reverse_order.per(8)
+    word = Word.new
+    render 'index'
   end
 
   private
-  def word_params
-	params.require(:word).permit(:name, :body, :color, :pickup)
-  end
 
+  def word_params
+    params.require(:word).permit(:name, :body, :color, :pickup)
+  end
 end
