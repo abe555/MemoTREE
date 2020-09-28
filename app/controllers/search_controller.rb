@@ -1,5 +1,4 @@
 class SearchController < ApplicationController
-
   before_action :authenticate_user!
 
   def search
@@ -14,8 +13,4 @@ class SearchController < ApplicationController
       @tags = Tag.search(params[:search], @sort_version, @model_select)
     end
   end
-
 end
-
-
-

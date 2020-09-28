@@ -44,7 +44,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     info = User.find_oauth(@omniauth)
     # user.rbに定義したメソッドでuser登録の有無確認や新規登録を行う
     @user = info[:user]
-    if @user.persisted? #userが保存済みかどうか確認
+    if @user.persisted? # userが保存済みかどうか確認
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else
@@ -53,8 +53,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-  def failure #失敗した時
-    redirect_to root_path and return
+  def failure # 失敗した時
+    redirect_to(root_path) && return
   end
-
 end
